@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="Index.css">
+</head>
+<body>
+
+    
+    <div class="user">
+        <p>Id: <span class="id"></span></p>
+        <p>Name: <span class="name"></span></p>
+        <p>Roll:<span class="roll"></span></p>
+    </div>
+
+    <script>
+
+       fetch('http://localhost:3000/person/3')
+        .then(res => res.json())
+        .then(data =>myfun(data))
+        
+        function myfun(item){
+     document.querySelector('.id').innerHTML=item.id;
+     document.querySelector('.name').innerHTML=item.nam;
+     document.querySelector('.roll').innerHTML=item.roll;
+        }
+    </script> 
+</body>
+</html>
